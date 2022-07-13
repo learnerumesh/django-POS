@@ -136,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
 
-ALLOWED_HOSTS=['127.0.0.1']
+ALLOWED_HOSTS=['127.0.0.1','djangoposapp.herokuapp.com/']
