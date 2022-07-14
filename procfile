@@ -1,1 +1,1 @@
-web: gunicorn pso.wsgi
+web: gunicorn pos.wsgi
