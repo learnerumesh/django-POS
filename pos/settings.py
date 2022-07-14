@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure--w(dug*va_megpa25w$gmv8o6+f8!fg_*m1^u$)z25pab0hicm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -84,11 +85,12 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangopos',
-        'USER':'postgres',
-        'PASSWORD':'123',
-        'HOST':'localhost'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd5cilohpafrn9f',
+        'USER':'gaxckoxwjzmbjd',
+        'PASSWORD':'b11cf0780e74df5ab443602275b25f476c1bdd3cef021c4e3dbbe50b8e3f68b1',
+        'HOST':'ec2-3-219-229-143.compute-1.amazonaws.com',
+        'PORT':'5432',  
     }
 }
 
@@ -131,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/posApp/')
-
+django_heroku.settings(locals())
 STATICFILES_DIRS = (
     # location of your application, should not be public web accessible 
     './static',
@@ -144,4 +146,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
 
-ALLOWED_HOSTS=['127.0.0.1','djangoposapp.herokuapp.com/','*']
+ALLOWED_HOSTS=['127.0.0.1','djangoposapp.herokuapp.com']
